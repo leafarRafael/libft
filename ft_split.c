@@ -6,7 +6,7 @@
 /*   By: rbutzke <leafarbutzke@hotmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:13:15 by rbutzke           #+#    #+#             */
-/*   Updated: 2023/10/28 15:18:14 by rbutzke          ###   ########.fr       */
+/*   Updated: 2023/10/29 16:50:43 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ static size_t	count_set(char const *s, char c)
 	return (count);
 }
 
+static void	ft_free_m(char **m, int i)
+{
+	while (i != 0)
+	{
+		free(m[i]);
+		i--;
+	}
+	free(m);
+	m = NULL;
+	return ;
+}
+
 static void	ft_cpy(size_t p, char **m, const char *s, char c)
 {
 	size_t	i;
@@ -58,6 +70,8 @@ static void	ft_cpy(size_t p, char **m, const char *s, char c)
 				size++;
 			}
 			m[i] = ft_substr(&s[j - size], 0, size);
+			if (!m[i])
+				ft_free_m(m, i);
 		}
 		i++;
 	}
@@ -73,7 +87,10 @@ char	**ft_split(char const *s, char c)
 	p = count_set(s, c);
 	m = (char **) ft_calloc(p + 1, sizeof(char *));
 	if (!m)
-		return (0);
+	{
+		free(m);
+		return (NULL);
+	}
 	ft_cpy(p, m, s, c);
 	return (m);
 }
