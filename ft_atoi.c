@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <leafarbutzke@hotmail.com>         +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:10:31 by rbutzke           #+#    #+#             */
-/*   Updated: 2023/10/17 15:01:26 by rbutzke          ###   ########.fr       */
+/*   Updated: 2023/11/03 15:05:08 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(nptr[i]) > 0)
 	{
 		nbr = (nbr * 10) + (nptr[i] - '0');
-		if (ft_isdigit(nptr[i]) <= 0)
+		if (ft_isdigit(nptr[i]) == 0)
 			break ;
 		i++;
 	}

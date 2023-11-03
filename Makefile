@@ -15,7 +15,7 @@ O_BONUS = $(B_FILES:.c=.o)
 INCLUDES = libft.h
 O_FILE = $(FILES:.c=.o)
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra
 O_FLAGS = -c
 
 all : $(NAME)
@@ -28,7 +28,7 @@ $(O_BONUS): $(B_FILES)
 
 %.o: %.c
 	$(CC) -I$(INCLUDES) $(O_FLAGS) $(CFLAGS) $< -o $@
-	ar -rc $(NAME) $@ 
+	ar -rc $(NAME) $@
 
 clean:
 	rm -rf $(O_FILE) $(O_BONUS)
@@ -38,4 +38,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONI: all clean fclean re
+.PHONI: all clean fclean re bonus

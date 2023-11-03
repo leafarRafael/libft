@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <leafarbutzke@hotmail.com>         +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:13:15 by rbutzke           #+#    #+#             */
-/*   Updated: 2023/10/29 16:50:43 by rbutzke          ###   ########.fr       */
+/*   Updated: 2023/11/03 15:07:34 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,12 @@ static size_t	count_set(char const *s, char c)
 
 static void	ft_free_m(char **m, int i)
 {
-	while (i != 0)
+	while (i > 0)
 	{
-		free(m[i]);
 		i--;
+		free(m[i]);
 	}
 	free(m);
-	m = NULL;
 	return ;
 }
 
