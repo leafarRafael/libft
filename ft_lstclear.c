@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:55:58 by rbutzke           #+#    #+#             */
-/*   Updated: 2023/11/03 15:06:30 by rbutzke          ###   ########.fr       */
+/*   Updated: 2023/11/03 15:32:20 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*h;
 
-	if (!del)
+	if (del == NULL && lst == NULL)
 		return ;
 	while (*lst)
 	{

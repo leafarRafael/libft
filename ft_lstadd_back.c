@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:41:39 by rbutzke           #+#    #+#             */
-/*   Updated: 2023/11/03 15:06:23 by rbutzke          ###   ########.fr       */
+/*   Updated: 2023/11/03 15:29:00 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	if (!lst && !new)
+	if (lst == NULL && new == NULL)
 		return ;
-	if (!(*lst))
+	if ((*lst) == NULL)
 	{
 		*lst = new;
 		return ;
