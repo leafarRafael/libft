@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 12:00:12 by rbutzke           #+#    #+#             */
-/*   Updated: 2023/11/03 15:07:53 by rbutzke          ###   ########.fr       */
+/*   Updated: 2023/11/04 08:54:35 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	s_src = ft_strlen(src);
 	if (s_dst > size)
 		return (s_src + size);
-	return (s_dst + ft_strlcpy(&dst[s_dst], src, size - s_dst));
+	ft_strlcpy(&dst[s_dst], src, size - s_dst);
+	return (s_dst + s_src);
 }
