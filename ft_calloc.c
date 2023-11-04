@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:29:33 by rbutzke           #+#    #+#             */
-/*   Updated: 2023/11/03 15:06:00 by rbutzke          ###   ########.fr       */
+/*   Updated: 2023/11/04 12:27:37 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	array = malloc(size * nmemb);
 	if (!array)
-	{
-		free(array);
-		return (0);
-	}
+		return (NULL);
 	ft_bzero(array, size * nmemb);
 	return (array);
 }
